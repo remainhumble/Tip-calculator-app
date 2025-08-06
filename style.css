@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+  font-family: "Space Mono", monospace;
+}
+
+:root {
+  --white: hsl(0, 100%, 100%);
+  --green-900: hsl(183, 100%, 15%);
+  --grey-50: hsl(189, 47%, 97%);
+}
+
+body {
+  background-color: hsl(185, 41%, 84%);
+}
+
+h2,
+h3 {
+  color: hsl(186, 14%, 43%);
+}
+
+.tip-button {
+  background-color: var(--green-900);
+  color: var(--grey-50);
+  border: none;
+}
+
+.custom-button {
+  border: none;
+  background-color: var(--grey-50);
+  color: hsl(186, 14%, 43%);
+}
+
+#logo {
+  background-color: hsl(185, 41%, 84%);
+}
+
+#tip-calculator {
+  margin-top: 70px;
+  background-color: var(--white);
+  height: 100vh;
+}
+
+#bill {
+  border: none;
+  background-image: url("images/icon-dollar.svg");
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+#people {
+  border: none;
+  background-image: url("images/icon-person.svg");
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+#results {
+  background-color: var(--green-900);
+}
