@@ -19,29 +19,31 @@
   <body>
     <img id="logo" src="./images/logo.svg" alt="logo" />
     <div id="tip-calculator">
-      <div id="bill-section">
-        <h3>Bill</h3>
-        <input type="number" id="bill" min="0" />
-      </div>
+      <form>
+        <div id="bill-section">
+          <h3>Bill</h3>
+          <input type="number" id="bill" min="0" />
+        </div>
 
-      <h3>Select Tip %</h3>
+        <h3>Select Tip %</h3>
 
-      <div id="tip-buttons">
-        <button class="tip-button">5%</button>
-        <button class="tip-button">10%</button>
-        <button class="tip-button">15%</button>
-        <button class="tip-button">25%</button>
-        <button class="tip-button">50%</button>
-        <button class="custom-button">Custom</button>
-      </div>
+        <div id="tip-buttons">
+          <button class="tip-button">5%</button>
+          <button class="tip-button">10%</button>
+          <button class="tip-button">15%</button>
+          <button class="tip-button">25%</button>
+          <button class="tip-button">50%</button>
+          <button class="custom-button">Custom</button>
+        </div>
 
-      <div id="people-section">
-        <h3>Number of People</h3>
-        <input type="number" id="people" min="1" />
-      </div>
+        <div id="people-section">
+          <h3>Number of People</h3>
+          <input type="number" id="people" min="1" />
+        </div>
+      </form>
 
-      <table>
-        <tbody id="results">
+      <table id="results">
+        <tbody>
           <tr id="tip-amount">
             <td>
               <h3>Tip Amount</h3>
