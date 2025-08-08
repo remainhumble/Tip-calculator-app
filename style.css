@@ -9,30 +9,59 @@
 }
 
 :root {
+  --green-400: hsl(172, 67%, 45%);
   --white: hsl(0, 100%, 100%);
   --green-900: hsl(183, 100%, 15%);
   --grey-50: hsl(189, 47%, 97%);
+  --grey-200: hsl(185, 41%, 84%);
+  --grey-500: hsl(186, 14%, 43%);
 }
 
 body {
   background-color: hsl(185, 41%, 84%);
 }
 
-h2,
 h3 {
   color: hsl(186, 14%, 43%);
 }
 
+input {
+  font-size: 24px;
+  color: var(--green-900);
+  text-align: right;
+  width: 100%;
+  border-radius: 5px;
+}
+
+td > h3 {
+  color: var(--grey-200);
+}
+
+#tip-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
 .tip-button {
+  font-size: 24px;
   background-color: var(--green-900);
   color: var(--grey-50);
   border: none;
+  padding: 6px 24px;
+  border-radius: 5px;
+  display: inline-block;
+  width: 160px;
 }
 
 .custom-button {
   border: none;
+  font-size: 24px;
   background-color: var(--grey-50);
   color: hsl(186, 14%, 43%);
+  padding: 6px 24px;
+  border-radius: 5px;
+  width: 158px;
 }
 
 #logo {
@@ -43,22 +72,60 @@ h3 {
   margin-top: 70px;
   background-color: var(--white);
   height: 100vh;
+  padding: 17px;
+}
+
+#bill,
+#people {
+  background-repeat: no-repeat;
+  background-color: var(--grey-50);
+  border: none;
+  margin-bottom: 24px;
+  background-position: 10px center;
 }
 
 #bill {
-  border: none;
   background-image: url("images/icon-dollar.svg");
-  background-repeat: no-repeat;
-  background-position: 10px center;
 }
 
 #people {
-  border: none;
   background-image: url("images/icon-person.svg");
-  background-repeat: no-repeat;
-  background-position: 10px center;
 }
 
-#results {
+table {
   background-color: var(--green-900);
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 14px;
+}
+
+td {
+  padding: 12px;
+}
+
+td > span {
+  color: var(--grey-500);
+}
+
+#tip-amount-value,
+#total-amount-value {
+  color: var(--green-400);
+  font-size: 32px;
+  padding-bottom: 25px;
+  text-align: right;
+}
+
+#tip-amount > td {
+  padding-top: 30px;
+}
+
+#reset {
+  cursor: pointer;
+  background-color: var(--green-400);
+  border: none;
+  text-transform: uppercase;
+  color: var(--green-900);
+  width: 100%;
+  padding: 6px 24px;
+  border-radius: 5px;
 }

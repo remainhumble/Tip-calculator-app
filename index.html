@@ -17,11 +17,11 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <img id="logo" src="./images/logo.svg" alt="logo">
+    <img id="logo" src="./images/logo.svg" alt="logo" />
     <div id="tip-calculator">
-      <div id="bill">
-        <h2>Bill</h2>
-        <input type="number" id="bill"/>
+      <div id="bill-section">
+        <h3>Bill</h3>
+        <input type="number" id="bill" min="0" />
       </div>
 
       <h3>Select Tip %</h3>
@@ -35,25 +35,32 @@
         <button class="custom-button">Custom</button>
       </div>
 
-      <h3>Number of People</h3>
-
-      <input type="number" id="people" value="1" min="1" />
-
-      <div id="results">
-        <div id="tip-amount">
-          <span>Tip Amount</span>
-          <span id="tip-amount-value">$0.00</span>
-          <br />
-          <span>/ person</span>
-        </div>
-        <div id="total-amount">
-          <span>Total</span>
-          <span id="total-amount-value">$0.00</span>
-          <br />
-          <span>/ person</span>
-        </div>
-        <button>Reset</button>
+      <div id="people-section">
+        <h3>Number of People</h3>
+        <input type="number" id="people" min="1" />
       </div>
+
+      <table>
+        <tbody id="results">
+          <tr id="tip-amount">
+            <td>
+              <h3>Tip Amount</h3>
+              <span>/ person</span>
+            </td>
+            <td id="tip-amount-value">$0.00</td>
+          </tr>
+          <tr id="total-amount">
+            <td>
+              <h3>Total</h3>
+              <span>/ person</span>
+            </td>
+            <td id="total-amount-value">$0.00</td>
+          </tr>
+          <tr>
+            <td colspan="2"><button id="reset">Reset</button></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </body>
 </html>
