@@ -19,53 +19,51 @@
   <body>
     <img id="logo" src="./images/logo.svg" alt="logo" />
     <div id="tip-calculator">
-      <form>
+      <form id="form">
         <div id="bill-section">
           <h3>Bill</h3>
           <input type="number" id="bill" class="remove-default" min="0" />
-        </div>
 
-        <h3>Select Tip %</h3>
+          <h3>Select Tip %</h3>
 
-        <div id="tip-buttons">
-          <button class="tip-button">5%</button>
-          <button class="tip-button">10%</button>
-          <button class="tip-button">15%</button>
-          <button class="tip-button">25%</button>
-          <button class="tip-button">50%</button>
-          <button class="custom-button">Custom</button>
-        </div>
-
-        <div id="people-section">
+          <div id="tip-buttons">
+            <button class="tip-button">5%</button>
+            <button class="tip-button">10%</button>
+            <button class="tip-button">15%</button>
+            <button class="tip-button">25%</button>
+            <button class="tip-button">50%</button>
+            <button class="custom-button">Custom</button>
+          </div>
           <div id="persons">
             <h3 id="nop">Number of People</h3>
             <h3 id="zeroless"></h3>
           </div>
           <input type="number" id="people" min="1" />
         </div>
+        <div id="people-section">
+          <table id="results">
+            <tbody>
+              <tr id="tip-amount">
+                <td>
+                  <h3>Tip Amount</h3>
+                  <span>/ person</span>
+                </td>
+                <td id="tip-amount-value">$0.00</td>
+              </tr>
+              <tr id="total-amount">
+                <td>
+                  <h3>Total</h3>
+                  <span>/ person</span>
+                </td>
+                <td id="total-amount-value">$0.00</td>
+              </tr>
+              <tr>
+                <td colspan="2"><button id="reset">Reset</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </form>
-
-      <table id="results">
-        <tbody>
-          <tr id="tip-amount">
-            <td>
-              <h3>Tip Amount</h3>
-              <span>/ person</span>
-            </td>
-            <td id="tip-amount-value">$0.00</td>
-          </tr>
-          <tr id="total-amount">
-            <td>
-              <h3>Total</h3>
-              <span>/ person</span>
-            </td>
-            <td id="total-amount-value">$0.00</td>
-          </tr>
-          <tr>
-            <td colspan="2"><button id="reset">Reset</button></td>
-          </tr>
-        </tbody>
-      </table>
     </div>
   </body>
 </html>

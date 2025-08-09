@@ -56,6 +56,12 @@ td > h3 {
   margin: 0;
 }
 
+button:active,
+#reset:active {
+  background-color: hsl(172, 69%, 74%);
+  color: var(--green-900);
+}
+
 #tip-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -97,6 +103,12 @@ td > h3 {
   background-color: var(--white);
   padding: 17px;
   border-radius: 24px 24px 0 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; /* Optional: Removes default margin */
 }
 
 #bill {
@@ -161,4 +173,24 @@ td > span {
   font-size: 24px;
   padding: 6px 24px;
   border-radius: 5px;
+}
+
+/* Wider screen size view */
+@media (min-width: 412px) {
+  #tip-calculator {
+    border-radius: 24px;
+  }
+
+  #form {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #bill-section {
+    width: 25em;
+    padding: 0 20px;
+  }
+
+  #people-section {
+  }
 }
