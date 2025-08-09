@@ -22,7 +22,7 @@
       <form>
         <div id="bill-section">
           <h3>Bill</h3>
-          <input type="number" id="bill" min="0" />
+          <input type="number" id="bill" class="remove-default" min="0" />
         </div>
 
         <h3>Select Tip %</h3>
@@ -37,7 +37,10 @@
         </div>
 
         <div id="people-section">
-          <h3>Number of People</h3>
+          <div id="persons">
+            <h3 id="nop">Number of People</h3>
+            <h3 id="zeroless"></h3>
+          </div>
           <input type="number" id="people" min="1" />
         </div>
       </form>
