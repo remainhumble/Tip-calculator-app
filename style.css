@@ -95,11 +95,12 @@ button:active,
 
 #logo {
   background-color: hsl(185, 41%, 84%);
-  padding-top: 50px;
+  margin-top: 20px;
 }
 
 #tip-calculator {
   margin-top: 70px;
+
   background-color: var(--white);
   padding: 17px;
   border-radius: 24px 24px 0 0;
@@ -177,8 +178,18 @@ td > span {
 
 /* Wider screen size view */
 @media (min-width: 412px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
   #tip-calculator {
+    display: flex;
+    flex-direction: column;
     border-radius: 24px;
+    width: 900px;
   }
 
   #form {
@@ -186,11 +197,38 @@ td > span {
     flex-direction: row;
   }
 
+  input {
+    margin: 0;
+  }
+
   #bill-section {
-    width: 25em;
-    padding: 0 20px;
+    width: 50%;
+    padding: 6px 20px;
   }
 
   #people-section {
+    display: flex;
+    flex-grow: 1;
+ 
   }
+
+  #tip-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .tip-button,
+  .custom-button {
+    width: 120px;
+  }
+
+td {
+  padding: 0 24px 24px 24px;
 }
+
+#logo {
+  margin: 0;
+}
+
+}
+
