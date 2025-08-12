@@ -176,6 +176,10 @@ td > span {
   border-radius: 5px;
 }
 
+td.disabled {
+  background-color: var(--green-900);
+}
+
 /* Wider screen size view */
 @media (min-width: 412px) {
   body {
@@ -187,14 +191,9 @@ td > span {
 
   #tip-calculator {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     border-radius: 24px;
     width: 900px;
-  }
-
-  #form {
-    display: flex;
-    flex-direction: row;
   }
 
   input {
@@ -209,7 +208,6 @@ td > span {
   #people-section {
     display: flex;
     flex-grow: 1;
- 
   }
 
   #tip-buttons {
@@ -222,13 +220,11 @@ td > span {
     width: 120px;
   }
 
-td {
-  padding: 0 24px 24px 24px;
-}
+  td {
+    padding: 0 24px 24px 24px;
+  }
 
-#logo {
-  margin: 0;
+  #logo {
+    margin: 0;
+  }
 }
-
-}
-
