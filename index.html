@@ -16,10 +16,10 @@
   </head>
   <body>
     <img id="logo" src="./images/logo.svg" alt="logo" />
-    <div id="tip-calculator">
+    <form action="/" id="tip-calculator">
       <div id="bill-section">
         <h3>Bill</h3>
-        <input type="number" id="bill" class="remove-default"/>
+        <input type="number" id="bill" class="remove-default" />
 
         <h3>Select Tip %</h3>
 
@@ -55,11 +55,15 @@
               <td id="total-amount-value">$0.00</td>
             </tr>
             <tr>
-              <td colspan="2"><button id="reset" class="disabled" disabled>Reset</button></td>
+              <td colspan="2">
+                <button type="reset" id="reset" disabled>
+                  Reset
+                </button>
+              </td>
             </tr>
           </tbody>
         </table>
       </div>
-    </div>
+    </form>
   </body>
 </html>

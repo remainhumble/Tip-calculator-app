@@ -3,15 +3,19 @@ const bill = document.getElementById("bill");
 const people = document.getElementById("people");
 const resetBtn = document.getElementById("reset");
 
-// validations object
-// const validations = {
-//   bill: (value) => value.length > 0,
-//   people: (value) => value.length > 0,
-// };
+tipCalculator.addEventListener("click", (event) => {
+  event.preventDefault();
+});
 
-const dataIsValid = (key, value) => {
-  return validations[key](value);
+// validations object
+const validations = {
+  bill: (value) => value.length > 0,
+  people: (value) => value.length > 0,
 };
+
+bill.addEventListener("input", () => {
+  resetBtn.disabled = bill.value === "";
+});
 
 const clearInputFields = () => {
   bill.value = "";

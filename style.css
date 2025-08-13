@@ -176,9 +176,7 @@ td > span {
   border-radius: 5px;
 }
 
-td.disabled {
-  background-color: var(--green-900);
-}
+
 
 /* Wider screen size view */
 @media (min-width: 412px) {
