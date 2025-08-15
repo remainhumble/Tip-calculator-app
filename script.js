@@ -1,6 +1,7 @@
 const tipCalculator = document.getElementById("tip-calculator");
 const bill = document.getElementById("bill");
 const people = document.getElementById("people");
+const inputs = document.querySelectorAll("input");
 const resetBtn = document.getElementById("reset");
 
 tipCalculator.addEventListener("click", (event) => {
@@ -8,18 +9,26 @@ tipCalculator.addEventListener("click", (event) => {
 });
 
 // validations object
-const validations = {
-  bill: (value) => value.length > 0,
-  people: (value) => value.length > 0,
+// const inputValues = {
+
+// };
+
+// const disableResetBtn = (input) => {
+// resetBtn.disabled = input.value === '';
+// };
+
+const checkInputs = () => {
+  const allEmpty = Array.from(inputs).every((input) => input.value === "");
+  resetBtn.disabled = allEmpty;
 };
 
-bill.addEventListener("input", () => {
-  resetBtn.disabled = bill.value === "";
+inputs.forEach((input) => {
+  input.addEventListener("input", checkInputs);
 });
 
 const clearInputFields = () => {
-  bill.value = "";
-  people.value = "";
+  inputs.forEach((input) => (input.value = ""));
+  resetBtn.disabled = true;
 };
 
 resetBtn.addEventListener("click", clearInputFields);

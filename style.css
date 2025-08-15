@@ -176,7 +176,11 @@ td > span {
   border-radius: 5px;
 }
 
-
+#reset:disabled {
+  background-color: hsl(183, 69%, 26%);
+  color: hsl(183, 76%, 21%);
+  cursor: not-allowed;
+}
 
 /* Wider screen size view */
 @media (min-width: 412px) {
