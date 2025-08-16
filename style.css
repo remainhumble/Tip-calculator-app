@@ -108,7 +108,7 @@ button:active,
 }
 
 #custom-tip:focus {
-    outline: 2px solid var(--green-400);
+  outline: 2px solid var(--green-400);
 }
 
 #logo {
@@ -130,14 +130,15 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0; /* Optional: Removes default margin */
 }
 
-#bill {
+#bill-input {
   background-image: url("images/icon-dollar.svg");
 }
 
-#people {
+#people-input {
   background-image: url("images/icon-person.svg");
 }
 
+#bill,
 #persons {
   display: flex;
   align-items: center;
@@ -150,7 +151,7 @@ input[type="number"]::-webkit-outer-spin-button {
   display: flex;
 }
 
-#zeroless {
+.zeroless {
   color: hsl(39, 100%, 50%);
 }
 

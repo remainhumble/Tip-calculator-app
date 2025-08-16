@@ -1,7 +1,8 @@
 const tipCalculator = document.getElementById("tip-calculator");
-const bill = document.getElementById("bill");
-const people = document.getElementById("people");
+const billInput = document.getElementById("bill-input");
+const peopleInput = document.getElementById("people-input");
 const inputs = document.querySelectorAll("input");
+const cantBeZero = document.getElementsByClassName("zeroless"); // Needs work
 const customBtn = document.getElementById("custom-button");
 const resetBtn = document.getElementById("reset");
 
@@ -9,13 +10,22 @@ tipCalculator.addEventListener("click", (event) => {
   event.preventDefault();
 });
 
-// validations object
-// const inputValues = {
-
-// };
-
 const checkInputs = () => {
-  const allEmpty = Array.from(inputs).every((input) => input.value === "");
+  const allEmpty = Array.from(inputs).every((input) => {
+    const value = input.value.trim();
+    const numericValue = Number(value);
+
+    // Set red border ONLY if value is exactly zero
+    if (value !== "" && numericValue === 0) {
+ 
+      input.style.outline = "2px solid red";
+    } else {
+      input.style.outline = ""; // Reset to default
+    }
+
+    return value === "" || numericValue <= 0;
+  });
+
   resetBtn.disabled = allEmpty;
 };
 
