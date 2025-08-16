@@ -48,7 +48,6 @@ input {
 
 input:focus {
   outline: 2px solid var(--green-400); /* Custom color */
-  /* or to remove: outline: none; */
 }
 
 td > h3 {
@@ -58,7 +57,7 @@ td > h3 {
 
 button:active,
 #reset:active {
-  background-color: hsl(172, 69%, 74%);
+  background-color: var(--green-400);
   color: var(--green-900);
 }
 
@@ -67,7 +66,7 @@ button:active,
   flex-wrap: wrap;
   gap: 12px;
   justify-content: space-evenly;
-  padding: 10px 0;
+  padding-bottom: 10px;
 }
 
 .tip-button {
@@ -75,22 +74,41 @@ button:active,
   background-color: var(--green-900);
   color: var(--grey-50);
   border: none;
-  padding: 6px 24px;
+  padding: 0.5rem 1rem;
   border-radius: 5px;
   display: inline-block;
   width: 160px;
   cursor: pointer;
 }
 
-.custom-button {
+#custom-button {
   border: none;
-  font-size: 24px;
   background-color: var(--grey-50);
   color: hsl(186, 14%, 43%);
   padding: 6px 24px;
   border-radius: 5px;
   width: 158px;
   cursor: pointer;
+}
+
+#custom-tip {
+  all: unset;
+  font-size: 24px;
+  background-repeat: no-repeat;
+  background-color: var(--grey-50);
+  color: var(--green-900);
+  text-align: right;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  display: inline-block;
+  width: 158px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+#custom-tip:focus {
+    outline: 2px solid var(--green-400);
 }
 
 #logo {
@@ -124,7 +142,6 @@ input[type="number"]::-webkit-outer-spin-button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 20px;
 }
 
 #nop,
@@ -218,7 +235,8 @@ td > span {
   }
 
   .tip-button,
-  .custom-button {
+  #custom-button,
+  #custom-tip {
     width: 120px;
   }
 
