@@ -145,14 +145,14 @@ input[type="number"]::-webkit-outer-spin-button {
   justify-content: space-between;
 }
 
-#nop,
-#zeroless {
+#nop {
   float: left;
   display: flex;
 }
 
-.zeroless {
+#zeroless {
   color: hsl(39, 100%, 50%);
+  display: none;
 }
 
 table {

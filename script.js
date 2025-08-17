@@ -2,7 +2,7 @@ const tipCalculator = document.getElementById("tip-calculator");
 const billInput = document.getElementById("bill-input");
 const peopleInput = document.getElementById("people-input");
 const inputs = document.querySelectorAll("input");
-const cantBeZero = document.getElementsByClassName("zeroless"); // Needs work
+const cantBeZero = document.getElementById("zeroless"); // Needs work
 const customBtn = document.getElementById("custom-button");
 const resetBtn = document.getElementById("reset");
 
@@ -17,15 +17,15 @@ const checkInputs = () => {
 
     // Set red border ONLY if value is exactly zero
     if (value !== "" && numericValue === 0) {
- 
       input.style.outline = "2px solid red";
+      cantBeZero.style.display = "block";
     } else {
       input.style.outline = ""; // Reset to default
+      cantBeZero.style.display = "";
     }
 
     return value === "" || numericValue <= 0;
   });
-
   resetBtn.disabled = allEmpty;
 };
 
