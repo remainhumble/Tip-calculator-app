@@ -150,9 +150,9 @@ input[type="number"]::-webkit-outer-spin-button {
   display: flex;
 }
 
-#zeroless {
+#zeroless, .bill-warning {
   color: hsl(39, 100%, 50%);
-  display: none;
+
 }
 
 table {

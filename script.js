@@ -5,23 +5,63 @@ const inputs = document.querySelectorAll("input");
 const cantBeZero = document.getElementById("zeroless"); // Needs work
 const customBtn = document.getElementById("custom-button");
 const resetBtn = document.getElementById("reset");
+const totalAmount = document.getElementById("total-amount-value");
+const billSection = document.getElementById("bill-section");
+const billDiv = document.getElementById("bill");
 
 tipCalculator.addEventListener("click", (event) => {
   event.preventDefault();
 });
 
+totalAmount.innerText = "$0.00";
+
 const checkInputs = () => {
   const allEmpty = Array.from(inputs).every((input) => {
     const value = input.value.trim();
-    const numericValue = Number(value);
+    let numericValue = Number(value);
+    let n = parseFloat(numericValue.toFixed(2));
+    totalAmount.innerText = `$${n.toFixed(2)}`;
 
-    // Set red border ONLY if value is exactly zero
-    if (value !== "" && numericValue === 0) {
-      input.style.outline = "2px solid red";
-      cantBeZero.style.display = "block";
-    } else {
+    // bill input
+    if (input === billInput && value !== "" && numericValue === 0) {
+      input.style.outline = "2px solid hsl(39, 100%, 50%)";
+      // Show warning for zero
+      let existingMsg = billDiv.querySelector(".bill-warning");
+      if (!existingMsg) {
+        const warning = document.createElement("h3");
+        warning.className = "bill-warning";
+        warning.innerText = "positive numbers only";
+        billDiv.appendChild(warning);
+      }
+    } else if (input === billInput && numericValue < 0) {
+      input.style.outline = "2px solid hsl(39, 100%, 50%)";
+      // Show warning for negative
+      let existingMsg = billDiv.querySelector(".bill-warning");
+      if (!existingMsg) {
+        const warning = document.createElement("h3");
+        warning.className = "bill-warning";
+        warning.innerText = "positive numbers only";
+        billDiv.appendChild(warning);
+      }
+    } else if (input === billInput) {
       input.style.outline = ""; // Reset to default
-      cantBeZero.style.display = "";
+      // Remove the warning if input is valid
+      let existingMsg = billDiv.querySelector(".bill-warning");
+      if (existingMsg) {
+        existingMsg.remove();
+      }
+    }
+
+    // people input
+    if (input === peopleInput && value !== "" && numericValue === 0) {
+      input.style.outline = "2px solid hsl(39, 100%, 50%)";
+      cantBeZero.innerText = "Can't be zero";
+    } else if (input === peopleInput && numericValue < 0) {
+      input.style.outline = "2px solid hsl(39, 100%, 50%)";
+      cantBeZero.innerText = "positive integers only";
+    } else if (input === peopleInput) {
+      input.style.outline = ""; // Reset to default
+      cantBeZero.innerText = "";
     }
 
     return value === "" || numericValue <= 0;
