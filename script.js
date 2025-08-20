@@ -9,6 +9,8 @@ const tipAmount = document.getElementById("tip-amount-value");
 const totalAmount = document.getElementById("total-amount-value");
 const billSection = document.getElementById("bill-section");
 const billDiv = document.getElementById("bill");
+const tipButtons = document.querySelectorAll(".tip-button");
+
 totalAmount.innerText = "$0.00";
 tipAmount.innerText = "$0.00";
 
@@ -16,16 +18,21 @@ tipCalculator.addEventListener("click", (event) => {
   event.preventDefault();
 });
 
-const checkInputs = () => {
+
+
+const checkInputs = (input) => {
   const allEmpty = Array.from(inputs).every((input) => {
     const value = input.value.trim();
     let numericValue = Number(value);
     let n = parseFloat(numericValue.toFixed(2));
- const tip = n * 0.15; // should be times selected btn
 
-    tipAmount.innerText = `$${tip.toFixed(2)}`;
-    totalAmount.innerText = `$${(n + tip).toFixed(2)}`; // <-- updated calculation
-
+    // Calculate per person
+    let totalTip = n * 0.15; // should be times selected btn
+    let tipPerPerson = totalTip / (peopleInput.value || 1); // Avoid division by zero
+    let totalPerPerson =
+      (Number(billInput.value) + totalTip) / (peopleInput.value || 1); // Avoid division by zero
+    tipAmount.innerText = `$${tipPerPerson.toFixed(2)}`;
+    totalAmount.innerText = `$${totalPerPerson.toFixed(2)}`; // <-- updated calculation
 
     // bill input
     if (input === billInput && value !== "" && numericValue === 0) {
@@ -77,6 +84,8 @@ const checkInputs = () => {
 inputs.forEach((input) => {
   input.addEventListener("input", checkInputs);
 });
+
+
 
 const clearInputFields = () => {
   inputs.forEach((input) => (input.value = ""));
