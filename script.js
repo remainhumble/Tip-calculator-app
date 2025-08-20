@@ -5,22 +5,27 @@ const inputs = document.querySelectorAll("input");
 const cantBeZero = document.getElementById("zeroless"); // Needs work
 const customBtn = document.getElementById("custom-button");
 const resetBtn = document.getElementById("reset");
+const tipAmount = document.getElementById("tip-amount-value");
 const totalAmount = document.getElementById("total-amount-value");
 const billSection = document.getElementById("bill-section");
 const billDiv = document.getElementById("bill");
+totalAmount.innerText = "$0.00";
+tipAmount.innerText = "$0.00";
 
 tipCalculator.addEventListener("click", (event) => {
   event.preventDefault();
 });
-
-totalAmount.innerText = "$0.00";
 
 const checkInputs = () => {
   const allEmpty = Array.from(inputs).every((input) => {
     const value = input.value.trim();
     let numericValue = Number(value);
     let n = parseFloat(numericValue.toFixed(2));
-    totalAmount.innerText = `$${n.toFixed(2)}`;
+ const tip = n * 0.15; // should be times selected btn
+
+    tipAmount.innerText = `$${tip.toFixed(2)}`;
+    totalAmount.innerText = `$${(n + tip).toFixed(2)}`; // <-- updated calculation
+
 
     // bill input
     if (input === billInput && value !== "" && numericValue === 0) {
