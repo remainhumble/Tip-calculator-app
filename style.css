@@ -55,7 +55,7 @@ td > h3 {
   margin: 0;
 }
 
-button:active,
+
 #reset:active {
   background-color: var(--green-400);
   color: var(--green-900);
@@ -79,6 +79,11 @@ button:active,
   display: inline-block;
   width: 160px;
   cursor: pointer;
+}
+
+.tip-button.active {
+  background-color: var(--green-400);
+  color: var(--green-900);
 }
 
 #custom-button {
