@@ -93,7 +93,7 @@ const checkInputs = (input) => {
     return value === "" || numericValue <= 0;
   });
 
-  calculateTipAndTotal(); // <-- call the separated function here
+  calculateTipAndTotal();
   resetBtn.disabled = allEmpty;
 };
 
@@ -112,6 +112,17 @@ const customizeTip = () => {
   customBtn.replaceWith(customInput);
   customInput.focus();
 
+  // Add event listener to custom tip input
+  customInput.addEventListener("input", () => {
+    // Remove active class from all buttons
+    tipButtons.forEach((btn) => btn.classList.remove("active"));
+
+    // Get custom tip value
+    selectedTip = parseFloat(customInput.value / 100) || 0;
+
+    // Calculate tip
+    calculateTipAndTotal();
+  });
   // reverts back to custom button when it loses it's clicked input focus
   customInput.onblur = function () {
     customInput.replaceWith(customBtn);
@@ -120,4 +131,9 @@ const customizeTip = () => {
 
 customBtn.addEventListener("click", customizeTip);
 
-resetBtn.addEventListener("click", clearInputFields);
+resetBtn.addEventListener("click", () => {
+  tipAmount.innerText = "$0.00";
+  totalAmount.innerText = "$0.00";
+  tipButtons.forEach((btn) => btn.classList.remove("active"));
+  clearInputFields();
+});

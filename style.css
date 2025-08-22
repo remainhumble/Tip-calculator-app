@@ -253,4 +253,9 @@ td > span {
   #logo {
     margin: 0;
   }
+
+  #tip-amount-value,
+#total-amount-value{
+  font-size: 53px;
+}
 }
