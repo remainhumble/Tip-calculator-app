@@ -86,7 +86,7 @@ const checkInputs = (input) => {
       input.style.outline = "2px solid hsl(39, 100%, 50%)";
       cantBeZero.innerText = "positive integers only";
     } else if (input === peopleInput) {
-      input.style.outline = ""; // Reset to default
+      input.style.outline = ""; 
       cantBeZero.innerText = "";
     }
 
